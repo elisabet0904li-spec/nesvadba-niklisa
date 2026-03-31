@@ -2009,7 +2009,13 @@
       .location-next-btn,
       .location-prev-btn { top: 47%; }
       #dresscode.section { padding-top: 14px; }
-      #details.section { margin-top: -64px; }
+      #details.section { margin-top: -36px; }
+      .location-photo-wrap { overflow: hidden; }
+      .section-image.location-photo {
+        width: 112%;
+        max-width: none;
+        margin-left: -6%;
+      }
       .date-block { min-height: 470px; padding: 0 20px 8px; margin: 18px 0 0; }
       .date-block .date-luv .l { font-size: 80px; }
       .date-block .date-luv .yu, .date-block .date-luv .o, .date-block .date-luv .b,
@@ -2108,16 +2114,20 @@
     }
 
     @media (max-width: 768px) {
-      .program-section { padding-top: 8px; margin-top: -8px; }
+      .program-section { padding-top: 6px; margin-top: -14px; }
+      .program-section .section-title-sm {
+        white-space: nowrap;
+        font-size: clamp(52px, 8.2vw, 66px);
+      }
       .program-timing-canvas { max-width: 900px; margin-top: -2px; }
       .program-center-element { width: 116%; margin-left: -8%; }
       .program-side-star { width: 34px; height: 34px; }
-      .program-side-star.left-1 { left: -28px; top: -8px; width: 34px; height: 34px; }
-      .program-side-star.left-2 { left: -4px; bottom: 72px; width: 24px; height: 24px; }
-      .program-side-star.left-3 { left: -14px; bottom: -10px; width: 18px; height: 18px; }
-      .program-side-star.right-1 { right: -24px; top: 44px; width: 28px; height: 28px; }
-      .program-side-star.right-2 { right: -4px; bottom: -6px; width: 34px; height: 34px; }
-      .program-side-star.right-3 { right: -18px; top: -8px; width: 20px; height: 20px; }
+      .program-side-star.left-1 { left: -30px; top: -26px; width: 34px; height: 34px; }
+      .program-side-star.left-2 { left: -6px; bottom: 94px; width: 24px; height: 24px; }
+      .program-side-star.left-3 { left: -16px; bottom: -22px; width: 18px; height: 18px; }
+      .program-side-star.right-1 { right: -26px; top: 30px; width: 28px; height: 28px; }
+      .program-side-star.right-2 { right: -6px; bottom: -18px; width: 34px; height: 34px; }
+      .program-side-star.right-3 { right: -20px; top: -24px; width: 20px; height: 20px; }
     }
 
     @media (max-width: 420px) {
@@ -2719,7 +2729,7 @@
       .hero-photo-wrap { margin: 8px auto -12px; }
       .section { padding: 16px 20px 24px; }
       #dresscode.section { padding-top: 12px; }
-      #details.section { margin-top: -72px; }
+      #details.section { margin-top: -42px; }
 
       /* Lift footer/telegram blocks a bit too */
       .final-contact-section { padding: 22px 20px 34px; }
@@ -2836,24 +2846,41 @@
       .details-below-photo .details-simple-text.details-simple-left,
       .details-below-photo .details-simple-text.details-simple-right {
         opacity: 0;
-        transition: transform 900ms cubic-bezier(0.18, 0.86, 0.22, 1), opacity 700ms ease;
+        transition: transform 1300ms cubic-bezier(0.16, 0.84, 0.24, 1), opacity 1050ms ease;
         will-change: transform, opacity;
       }
       .details-below-photo .details-simple-text.details-simple-left {
-        transform: translateX(-46px);
+        transform: translateX(-36px);
       }
       .details-below-photo .details-simple-text.details-simple-right {
-        transform: translateX(46px);
+        transform: translateX(36px);
+        transition-delay: 120ms;
       }
       .details-below-photo .details-simple-text.is-fly-visible {
         opacity: 1;
         transform: translateX(0);
       }
+      .details-below-photo {
+        gap: clamp(22px, 4.8vw, 38px);
+      }
+      .details-below-photo .details-simple-text.details-simple-right {
+        margin-top: 8px;
+      }
+      .details-below-photo .details-note-star.s1 { left: 1%; top: 0; }
+      .details-below-photo .details-note-star.s2 { left: 6%; top: 12%; }
+      .details-below-photo .details-note-star.s3 { right: 1%; top: 2%; }
+      .details-below-photo .details-note-star.s4 { right: 6%; top: 18%; }
+      .details-below-photo .details-note-star.s5 { left: 2%; top: 52%; }
+      .details-below-photo .details-note-star.s6 { left: 10%; top: 76%; }
+      .details-below-photo .details-note-star.s7 { right: 2%; top: 64%; }
+      .details-below-photo .details-note-star.s8 { right: 9%; top: 86%; }
+      .details-below-photo .details-note-star.s9 { left: 16%; top: 40%; }
+      .details-below-photo .details-note-star.s10 { right: 16%; top: 46%; }
 
       /* Mobile: confirm stars moved away from inputs/buttons */
       .confirm-star { width: 40px; }
-      .confirm-star.left { left: -18px; top: 208px; }
-      .confirm-star.right { right: -18px; top: 416px; }
+      .confirm-star.left { left: 6%; top: -8px; }
+      .confirm-star.right { right: 6%; top: -8px; }
 
       /* Mobile: make the final photo slightly larger */
       .bottom-wide-photo img {
@@ -3232,8 +3259,9 @@
 
           <div class="confirm-field confirm-allergy-field">
             <p class="confirm-note-text">
-              Будем благодарны, если вы сообщите о возможных<br>
-              ограничениях в питании или пищевых аллергиях:
+              Будем благодарны, если вы сообщите<br>
+              о возможных ограничениях в питании<br>
+              или пищевых аллергиях
             </p>
             <textarea
               class="confirm-textarea"
@@ -3264,7 +3292,7 @@
       <a class="final-contact-btn" href="tel:+79688064404" aria-label="Позвонить организатору">КОНТАКТ</a>
     </section>
     <section class="final-wishes-block" aria-label="Финальное сообщение">
-      <p class="final-wishes-text">Мы будем очень рады видеть Вас на нашей свадьбе.<br>Ваши любимые Никита и Елизавета</p>
+      <p class="final-wishes-text">Мы будем очень рады видеть Вас<br>на нашей свадьбе.<br>Ваши любимые Никита и Елизавета</p>
       <img src="images/final-heart.png" alt="" aria-hidden="true" class="final-wishes-heart">
     </section>
 
